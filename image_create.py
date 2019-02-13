@@ -1,23 +1,22 @@
 import cv2 as cv
-import numpy as np
-import os
-import sys
+from glob import glob
 
-path = "negatives/"
-#path = "positives/"
 
-folder = "neg/"
-#folder = "pos/"
-
-dirs = os.listdir(path)
 num = 1
 
 def gray_n_resize():
-    for images in dirs:
-        if os.path.isfile(path+images):
-            img = cv.imread(path+images+'.jpg', cv.IMREAD_GRAYSCALE)
-            res = cv.resize(img, (300,300))
-            cv.imwrite(folder+str(num)+'.jpg', res)
-            num += 1
+    for filename in glob("neg/*"):
+        o_img = cv.imread(filename, cv.IMREAD_UNCHANGED)
+	g_img = cv.cvtColor(o_img, cv.COLOR_BGR2GRAY)
+        img  = cv.resize(g_img, (300,300))
+        cv.imwrite("negative/"+str(num)+'.jpg', img)
+        num += 1
 
-gray_n_resize()
+def create_bg():
+	for filename in glob("negative/*"):
+		line = filename+'\n'
+		with open('bg.txt','a') as f:
+			f.write(line)
+
+#gray_n_resize()
+#create_bg
