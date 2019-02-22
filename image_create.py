@@ -1,13 +1,10 @@
 import cv2 as cv
 import numpy as np
 import os
-from glob import glob
+import sys
 
-
-
+dirs = os.listdir("negatives/")
 num = 1
-
-CWD = os.getcwd()
 
 def gray_n_resize():
     for name in glob.glob.glob(CWD + path + '/*'):
