@@ -3,21 +3,17 @@ import numpy as np
 import os
 import sys
 
-path = "negatives/"
-#path = "positives/"
-
-folder = "neg/"
-#folder = "pos/"
-
-dirs = os.listdir(path)
+dirs = os.listdir("negatives/")
 num = 1
 
 def gray_n_resize():
     for images in dirs:
-        if os.path.isfile(path+images):
-            img = cv.imread(path+images+'.jpg', cv.IMREAD_GRAYSCALE)
-            res = cv.resize(img, (300,300))
-            cv.imwrite(folder+str(num)+'.jpg', res)
-            num += 1
+        img = cv.imread("negatives/"+images+".jpeg",cv.IMREAD_ANYDEPTH)
+        cv.imshow("image",img)
+        mat gray_image
+        cvt(image, gray_image,CV_BGR2GRAY)
+        #res = cv.resize(img, (300,300))
+        #cv.imwrite("neg/"+str(num)+".jpeg", res)
+        #num += 1
 
 gray_n_resize()
