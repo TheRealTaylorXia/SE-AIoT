@@ -1,16 +1,10 @@
 import cv2 as cv
 import numpy as np
 import os
-import glob
+from glob import glob
 
 
-path = "negatives/"
-#path = "positives/"
 
-folder = "neg/"
-#folder = "pos/"
-
-dirs = os.listdir(path)
 num = 1
 
 CWD = os.getcwd()
@@ -22,4 +16,12 @@ def gray_n_resize():
         cv.imwrite(folder + str(num) + '.jpg', res)
         num += 1
 
-gray_n_resize()
+def create_bg():
+	for filename in glob("negative/*"):
+		line = filename+'\n'
+		with open('bg.txt','a') as f:
+			f.write(line)
+
+
+#gray_n_resize()
+#create_bg
