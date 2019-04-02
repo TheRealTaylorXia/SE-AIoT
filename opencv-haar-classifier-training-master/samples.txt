@@ -1,0 +1,14 @@
+./samples/IMG_5096.JPG.vec
+./samples/IMG_5098.JPG.vec
+./samples/IMG_5093.JPG.vec
+./samples/IMG_5104.JPG.vec
+./samples/IMG_5094.JPG.vec
+./samples/IMG_5101.JPG.vec
+./samples/IMG_5105.JPG.vec
+./samples/IMG_5099.JPG.vec
+./samples/IMG_5103.JPG.vec
+./samples/IMG_5106.JPG.vec
+./samples/IMG_5102.JPG.vec
+./samples/image.jpg.vec
+./samples/IMG_5097.JPG.vec
+./samples/IMG_5100.JPG.vec
